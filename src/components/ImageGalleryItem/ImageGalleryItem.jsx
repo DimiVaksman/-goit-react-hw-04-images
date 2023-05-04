@@ -8,6 +8,7 @@ export const ImageGalleryItem = ({ item, onImgClick }) => {
     <li
       onClick={e => {
         e.preventDefault();
+
         onImgClick({ largeImageURL, tags });
       }}
     >
@@ -25,6 +26,7 @@ export const ImageGalleryItem = ({ item, onImgClick }) => {
 };
 
 ImageGalleryItem.propTypes = {
+  onImgClick: PropTypes.func.isRequired,
   item: PropTypes.shape({
     tags: PropTypes.string.isRequired,
     webformatURL: PropTypes.string.isRequired,
